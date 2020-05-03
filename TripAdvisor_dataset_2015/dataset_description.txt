@@ -1,0 +1,97 @@
+Licence:
+ * This dataset is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	TripAdvisor Dataset
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Author: Alexandra Roshchina (http://twin-persona.org)
+Date: October 2015
+
+This is the updated version of the TripAdvisor Dataset released in January 2015 (http://twin-persona.org/#resources).
+* First file includes a detailed description of users' profiles						PROFILES
+* Second file includes personality scores per each user profile			    		PERSONALITY SCORES
+* Third file includes samples of 5 or more text reviews (for each user)				REVIEWS
+* Fourth file includes textual content of 1 article (available only for some users)	ARTICLES
+
+Includes personality scores calculated using Fabio Celli's (http://personality.altervista.org/fabio.htm) component.
+
+Detailed information on existing types of TripAdvisor badges can be found at http://www.tripadvisor.com/TripCollectiveBadges
+Detailed information on TripAdvisor points system can be found at http://www.tripadvisor.co.uk/TripCollective
+Detailed information on Big Five personality traits can be found at https://en.wikipedia.org/wiki/Big_Five_personality_traits
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	PROFILES fields
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. General user information
+username		- name of the user
+ageRange		- age range ("13-17", "18-24", "25-34", "35-49", "50-64", "65+")
+gender			- female/male
+location		- city, country
+travelStyle		- travel style
+reviewerBadge	- one of the 6 available types of reviewer badges (Reviewer badge)
+registerDate	- date of registration at TripAdvisor
+
+2. Reviews counts
+numHotelsReviews	- total number of Hotel reviews written
+numRestReviews		- total number of Restaurant reviews written
+numAttractReviews	- total number of Attractions reviews written
+numFirstToReview	- total number of language-specific reviews written among one of the first people who reviewed a particular place (Explorer badge)
+
+3. Other contributions counts
+numRatings		- total number of ratings given
+numPhotos		- total number of photos
+numForumPosts	- total number of forum posts
+numArticles 	- total number of articles published
+
+4. General statistics
+numCitiesBeen 	- number of cities travelled to (Passport badge)
+totalPoints 	- total TripAdvisor points earned
+contribLevel 	- TripAdvisor contributor level
+numHelpfulVotes	- total number of helpful reviews
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	PERSONALITY SCORES fields
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+username                - name of the user
+open                    - openness to experience score (0-1)
+cons                    - conscientiousness score (0-1)
+extra                   - extraversion score (0-1)
+agree                   - agreeableness score (0-1)
+neuro                   - neuroticism/emotional stability score (0-1)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	REVIEWS fields
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+username		- name of the user
+type			- review type ("Hotel", "Restaurant", "Attraction")
+date			- date of creation
+title           - title of the review
+text			- textual content of the review
+rating			- rating that the user gave to the hotel, restaurant or attraction (from 1 to 5)
+helpfulness		- the number of times that other users marked the review as helpful
+total_points    - value according to the TriAdvisor points system
+taObject        - the name of the reviewed TripAdvisor object ("Hotel", "Restaurant", "Attraction")
+taObjectUrl     - the url of the reviewed TripAdvisor object ("Hotel", "Restaurant", "Attraction")
+taObjectCity    - the city of the reviewed TripAdvisor object ("Hotel", "Restaurant", "Attraction")
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	ARTICLES fields
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+username		- name of the user
+date			- date of creation
+title			- title of the article
+text			- textual content of the article
+total_points    - value according to the TriAdvisor points system
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	Acknowledgments
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Please list the following citations when you use the dataset:
+
+1. A. Roshchina, J. Cardiff and P. Rosso. (2015). TWIN: Personality-based Intelligent Recommender System, Journal of Intelligent & Fuzzy Systems, IOS Press, vol. 28, no. 5, pp. 2059–2071, DOI: 10.3233/IFS-141484.
+2. F. Celli et al. (2014). The Workshop on Computational Personality Recognition. Proceedings of ACM Multimedia 2014, p.1245-1246, DOI: 10.1145/2647868.2647870.
