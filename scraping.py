@@ -80,7 +80,10 @@ def getData(hotel_url):
     postalCode = 0
     totaleReview = 0
     hotel_profile = {}  # dict de données de l'hotel courant
-
+    cleanliness_score = 0
+    value_score = 0
+    location_score = 0
+    service_score = 0
     browser.get(hotel_url)
 
     content = browser.page_source
@@ -143,14 +146,34 @@ def getData(hotel_url):
     else:
         print("in the score")
         return None
-
+    #hotel_style
     for index, a in enumerate(soup.find_all("div", class_="hotels-hr-about-layout-TextItem__textitem--2JToc")):
         classString = getCLass(a.parent['class'])
         if (classString == "ui_column is-6" and index != 0):
             hotel_style = hotel_style +'_'.join(a.get_text().replace('/','').split())+" "
             hotel_profile["hotel_style"] = hotel_style
+    
+    	#REVIEWS ---------------------------------
+    for index, a in enumerate(soup.find_all("div", {"class": "hotels-hotel-review-about-with-photos-Reviews__subratingRow--2u0CJ"})):
+    	span_class = getCLass(a.find("span")['class']) 
+    	if(index == 0):
+            location_score = int(span_class[len(span_class)-2:])/10
+            hotel_profile["location_score"]=location_score
+           #cleanliness
+    	if(index == 1):
+            cleanliness_score = int(span_class[len(span_class)-2:])/10
+            hotel_profile["cleanliness_score"]=cleanliness_score
+           #service
+    	if(index == 2):
+            service_score = int(span_class[len(span_class)-2:])/10
+            hotel_profile["service_score"]=service_score
+           #value
+    	if(index == 3):
+            value_score = int(span_class[len(span_class)-2:])/10
+            hotel_profile["value_score"]=value_score
 
-    # Hotel class
+
+    # Hotel class----------------------------------
     if soup.find("span", {"class": "hotels-hotel-review-about-with-photos-goodtoknow-StarRating__stars--3tYZG"}):
         div_class = getCLass(soup.find("span", class_="hotels-hotel-review-about-with-photos-goodtoknow-StarRating__stars--3tYZG").find("span")['class'])
         if (div_class == "_2TmwtWEr f33bWmtw uq1qMUbD"):
@@ -203,16 +226,16 @@ def getData(hotel_url):
 
 browser = webdriver.Firefox(executable_path="/home/sabir/Documents/geckodriver-v0.26.0-linux64/geckodriver")
 
-Hotels_url = getUniqueUrls("testF.xlsx")
+Hotels_url = getUniqueUrls("TesTF.xlsx")
 headers = requests.utils.default_headers()
 headers.update({'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'})
 
-Hotels_url = getUniqueUrls("testF.xlsx")
+Hotels_url = getUniqueUrls("TesTF.xlsx")
 
 
 # csv columns
 csv_columns = ['name', 'url', 'Country', 'Region', 'Street', 'Zip', 'location', 'property_amenties', 'room_features',
-               'hotel_style', 'hotel_class', 'price', 'hotel_score_reviews', 'totalReview', ]
+               'hotel_style', 'hotel_class', 'price', 'hotel_score_reviews', 'totalReview',"location_score","cleanliness_score", "service_score", "value_score", ]
 
 # la liste qui va contenir le dict de données des hotels
 dict_data = list()
@@ -220,20 +243,20 @@ dict_data = list()
 
 # --
 i = 0;
+print(len(Hotels_url))
 for index,hotel_url in enumerate(Hotels_url):
     if ("Hotel_Review" in hotel_url):
-
-        if (i > 70): break
+        if (i > 200): break
+        if (index%10 in [2,8,4,6] or index < 300 ):continue
         hotel_profile = getData(hotel_url)
         print("proceeded")
         if( not (hotel_profile is None)):
             i += 1;
             print(i,"\n")
             dict_data.append(hotel_profile)
-
 csv_file = "Hotels.csv"
 try:
-    with open(csv_file, 'w') as csvfile:
+    with open(csv_file, 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
         writer.writeheader()
         for data in dict_data:
