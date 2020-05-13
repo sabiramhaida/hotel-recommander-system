@@ -219,8 +219,27 @@ def getData(hotel_url):
         getUserDate(soup,data["name"])
         #
         break
-    return hotel_profile
 
+    [a,b] = hotel_url.split("Reviews")
+
+    hotel_url = a +"Reviews-or5"+ b
+    browser.get(hotel_url)
+    soup = BeautifulSoup(content, "html.parser")
+    getUserDate(soup,data["name"])
+
+    hotel_url = a +"Reviews-or10"+ b
+    browser.get(hotel_url)
+    content = browser.page_source
+    soup = BeautifulSoup(content, "html.parser")
+    getUserDate(soup,data["name"])
+
+    hotel_url = a +"Reviews-or15"+ b
+    browser.get(hotel_url)
+    content = browser.page_source
+    soup = BeautifulSoup(content, "html.parser")
+    getUserDate(soup,data["name"])
+
+    return hotel_profile
 
 # ------------------------------------------------------------
 
@@ -246,8 +265,7 @@ i = 0;
 print(len(Hotels_url))
 for index,hotel_url in enumerate(Hotels_url):
     if ("Hotel_Review" in hotel_url):
-        if (i > 200): break
-        if (index%10 in [2,8,4,6] or index < 300 ):continue
+        if (i > 1000): break
         hotel_profile = getData(hotel_url)
         print("proceeded")
         if( not (hotel_profile is None)):
