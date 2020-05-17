@@ -145,6 +145,9 @@
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.21" />
+          <element id="library" level="project" name="Maven: org.python:jython-standalone:2.7.1" />
+          <element id="library" level="project" name="Maven: org.bytedeco:cpython:3.7.7-1.5.3" />
+          <element id="library" level="project" name="Maven: org.bytedeco:javacpp:1.5.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">

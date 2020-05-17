@@ -4,8 +4,7 @@
 <%@include file="UI_Components/navbar.jsp" %>
 <!-- Page top Section end -->
 <%
-    ObjectId hotelId = new ObjectId(request.getParameter("hotel_id").toString());
-    Hotel hotel = new Hotel_Dao().getHotel(hotelId);
+    Hotel hotel = (Hotel) request.getAttribute("Hotel");
 %>
 <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
     <div class="page-top-warp">
@@ -89,8 +88,8 @@
                     <div class="property-text">
                         <h4>Description</h4>
                         <div class="row justify-content-center">
-                            <div class="col-lg-3">
-                                <h5>Property amenties</h5>
+                            <div class="col-lg-4">
+                                <h5 style="margin-bottom: 20px">Property amenties</h5>
                                 <ul class="list-group list-group-flush">
                                     <%
                                         for (String property_amenty : hotel.getProperty_amenties()) {
@@ -101,8 +100,8 @@
                                 </ul>
                             </div>
 
-                            <div class="col-lg-3">
-                                <h5>Room features</h5>
+                            <div class="col-lg-4">
+                                <h5 style="margin-bottom: 20px">Room features</h5>
                                 <ul class="list-group list-group-flush">
                                     <%
                                         for (String room_feature : hotel.getRoom_features()) {
@@ -113,8 +112,8 @@
                                 </ul>
                             </div>
 
-                            <div class="col-lg-3">
-                                <h5>Hotel style</h5>
+                            <div class="col-lg-4">
+                                <h5 style="margin-bottom: 20px">Hotel style</h5>
                                 <ul class="list-group list-group-flush">
                                     <%
                                         for (String hotel_style : hotel.getHotel_style()) {
@@ -129,7 +128,7 @@
 
                     </div>
                     <div style="margin-top: 30px">
-                        <h4 style="margin-bottom: 20px">Detail</h4>
+                        <h4 style="margin-bottom: 30px">Detail</h4>
                         <div class="property-feature" >
                             <div class="row">
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2">

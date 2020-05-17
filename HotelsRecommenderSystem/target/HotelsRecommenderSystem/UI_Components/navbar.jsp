@@ -45,8 +45,8 @@
         <ul class="main-menu">
             <li><a href="./homepage" class="active">Home</a></li>
             <li><a href="./hotelsList">Hotels list</a></li>
-            <li><a href="news.html">About us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="./contact">Contact</a></li>
+            <li><a href="./about">About us</a></li>
         </ul>
         <div class="header-right">
             <div class="user-panel">

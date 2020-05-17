@@ -28,7 +28,7 @@ public class Hotel {
 
     @ElementCollection
         private List<String> Hotel_style = new ArrayList<String>();
-    private int Hotel_class;
+    private Double Hotel_class;
     private Double price;
     private Double Hotel_score_reviews;
     private Double Location_score;
@@ -112,11 +112,11 @@ public class Hotel {
         Hotel_style = hotel_style;
     }
 
-    public int getHotel_class() {
+    public Double getHotel_class() {
         return Hotel_class;
     }
 
-    public void setHotel_class(int hotel_class) {
+    public void setHotel_class(Double hotel_class) {
         Hotel_class = hotel_class;
     }
 
