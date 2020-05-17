@@ -8,8 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1279d24a-52c1-4547-a2da-2443e9a435a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/Hotel_Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/Hotel_Dao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MainPackage/HotelPageRedirect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainPackage/HotelPageRedirect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hotel_data_cleaning_and_preprcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hotel_data_cleaning_and_preprcessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/hotelPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hotelPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/HotelsRecommenderSystem/WEB-INF/classes/MainPackage/HotelPageRedirect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/HotelsRecommenderSystem/WEB-INF/classes/MainPackage/HotelPageRedirect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MainPackage/HotelPageRedirect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainPackage/HotelPageRedirect.class" afterDir="false" />
     </list>
@@ -184,6 +185,7 @@
       <workItem from="1589669469053" duration="1286000" />
       <workItem from="1589691182490" duration="4645000" />
       <workItem from="1589706907230" duration="544000" />
+      <workItem from="1589744384132" duration="1383000" />
     </task>
     <servers />
   </component>
@@ -255,10 +257,10 @@
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state width="1291" height="354" key="GridCell.Tab.2.right/0.27.1920.1000@0.27.1920.1000" timestamp="1589707451797" />
-    <state x="616" y="353" key="com.intellij.ide.util.TipDialog" timestamp="1589706907894">
+    <state x="616" y="353" key="com.intellij.ide.util.TipDialog" timestamp="1589744385372">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="616" y="353" key="com.intellij.ide.util.TipDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1589706907894" />
+    <state x="616" y="353" key="com.intellij.ide.util.TipDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1589744385372" />
     <state x="624" y="240" width="672" height="677" key="run.anything.popup" timestamp="1589666964781">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>

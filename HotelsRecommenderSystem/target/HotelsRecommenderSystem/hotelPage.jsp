@@ -1,6 +1,7 @@
 <%@ page import="org.bson.types.ObjectId" %>
 <%@ page import="Dao.Hotel_Dao" %>
 <%@ page import="Model.Hotel" %>
+<%@ page import="java.util.List" %>
 <%@include file="UI_Components/navbar.jsp" %>
 <!-- Page top Section end -->
 <%
@@ -179,24 +180,30 @@
                             <h2>Similar hotels</h2>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <%
+                                List<String> hotelNames = (List<String> ) request.getAttribute("recommended_hotels");
+                                List<Hotel> hotelsRecommendedList = new Hotel_Dao().getHotelsByName(hotelNames);
+                                for (Hotel hotelRecommended : hotelsRecommendedList) {
+                            %>
+                            <div class="col-lg-3">
                                 <div class="property-item">
                                     <div class="pi-image">
                                         <img src="img/property/1.jpg" alt="">
                                         <div class="pi-badge new">New</div>
                                     </div>
-                                    <h3>$469,000</h3>
-                                    <h5>3 Bedrooms Townhouse</h5>
-                                    <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
-                                        massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
-                                        aptent taciti sociosqu ad litora.</p>
+                                    <h3>$<%=hotelRecommended.getPrice()%></h3>
+                                    <h5><%=hotelRecommended.getName()%></h5>
+                                    <p>Hotel class : <%=hotelRecommended.getHotel_class()%></p>
+                                    <h5><%=hotelRecommended.getCountry()%></h5>
                                     <a href="#" class="readmore-btn">Find out more</a>
                                 </div>
                             </div>
-
+                            <% }%>
                         </div>
+
                     </div>
                 </section>
+
                 <!-- Property Section end -->
             </div>
             <div class="col-lg-4 col-md-8 sidebar">
