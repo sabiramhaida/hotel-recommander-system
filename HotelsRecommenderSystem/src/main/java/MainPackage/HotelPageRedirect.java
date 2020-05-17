@@ -38,11 +38,10 @@ public class HotelPageRedirect extends javax.servlet.http.HttpServlet {
         File file = new File(path);
 
         List<String> list = new ArrayList<String>();
-        list.add("python");
+        list.add("python3.6");
         String absPath = file.getAbsolutePath();
         list.add(absPath);
         list.add(hotel.getName());
-        System.out.print(list.toString());
         ProcessBuilder pb = new ProcessBuilder(list);
         Process process = pb.start();
 
@@ -54,11 +53,10 @@ public class HotelPageRedirect extends javax.servlet.http.HttpServlet {
         try{
             while((line = reader.readLine()) != null){
                 output += line;
-                System.out.println("stdout: "+ line);
+                System.out.println(line);
             }
         }catch(IOException e){
             System.out.println("Exception in reading output python"+ e.toString());
         }
-        System.out.println("Python finished and output : " + output);
     }
 }

@@ -212,7 +212,6 @@ mapper = {
 }
 
 if __name__== "__main__":
-    print("Call from python")
     content_based_recomm(similarity_table=similarity_scores,
                          mapper=mapper,
                          inputHotel=sys.argv[1],
