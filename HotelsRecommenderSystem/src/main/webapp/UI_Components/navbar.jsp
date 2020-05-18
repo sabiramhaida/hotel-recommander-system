@@ -44,7 +44,7 @@
     <nav class="header-nav">
         <ul class="main-menu">
             <li><a href="./homepage" class="active">Home</a></li>
-            <li><a href="./hotelsList">Hotels list</a></li>
+            <li><a href="./hotelsList?filter=all">Hotels list</a></li>
             <li><a href="./contact">Contact</a></li>
             <li><a href="./about">About us</a></li>
         </ul>
