@@ -60,6 +60,55 @@ public class Hotel_Dao {
         if(hotels.size() == 0) return null;
         else return hotels;
     }
+    public List<Hotel> getHotelsByCountry(String country) throws ClassNotFoundException {
+
+        entityManagerFactory = HibernateOGMUtil.setUpEntityManagerFactory();
+
+        entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+
+        String query = "FROM Hotel as h where h.Country = :country";
+        List<Hotel> hotels = entityManager.createQuery( query , Hotel.class )
+                .setParameter("country",country)
+                .getResultList();
+        if(hotels.size() == 0) return null;
+        else return hotels;
+    }
+
+    public List<Hotel> getHotelsByPrice(Double min, Double max) throws ClassNotFoundException {
+
+        entityManagerFactory = HibernateOGMUtil.setUpEntityManagerFactory();
+
+        entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+
+        String query = "FROM Hotel as h where h.price BETWEEN :min and :max";
+        List<Hotel> hotels = entityManager.createQuery( query , Hotel.class )
+                .setParameter("min",min)
+                .setParameter("max",max)
+                .getResultList();
+        if(hotels.size() == 0) return null;
+        else return hotels;
+    }
+
+    public List<Hotel> getHotelsByClass(Double min, Double max) throws ClassNotFoundException {
+
+        entityManagerFactory = HibernateOGMUtil.setUpEntityManagerFactory();
+
+        entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+
+        String query = "FROM Hotel as h where h.Hotel_class BETWEEN :min and :max";
+        List<Hotel> hotels = entityManager.createQuery( query , Hotel.class )
+                .setParameter("min",min)
+                .setParameter("max",max)
+                .getResultList();
+        if(hotels.size() == 0) return null;
+        else return hotels;
+    }
 
     public List<Hotel> getHotels() throws ClassNotFoundException {
 

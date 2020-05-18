@@ -10,9 +10,7 @@ import sys
 from fuzzywuzzy import fuzz
 
 """Import data from mongodb"""
-#client = MongoClient("mongodb://aym:root@localhost:27017/?authSource=CodePhenomRemastered")
-client = MongoClient("mongodb://localhost:27017/?")
-
+client = MongoClient("mongodb://aym:root@localhost:27017/?authSource=CodePhenomRemastered")
 db=client.HotelRecommenderSystem
 
 feature_names_colab = ['name','Country','Region','Street','Zip','property_amenties','room_features','hotel_style','hotel_class','price','hotel_score_reviews'

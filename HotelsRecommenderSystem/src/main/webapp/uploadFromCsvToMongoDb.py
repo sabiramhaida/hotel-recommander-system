@@ -40,9 +40,13 @@ for indexHotel in range(0, len(hotels0)):
     df = df.append(dictionary, ignore_index=True, sort=None)
 
 # Making a Connection with MongoClient
+<<<<<<< HEAD
 #client = MongoClient("mongodb://aym:root@localhost:27017/?authSource=CodePhenomRemastered")
 
 client = MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false")
+=======
+client = MongoClient("mongodb://aym:root@localhost:27017/?authSource=CodePhenomRemastered")
+>>>>>>> 6c02a2a1c912898d439788f80166322cb8e446ef
 # database
 db = client["HotelRecommenderSystem"]
 hotel= db["Hotel"]

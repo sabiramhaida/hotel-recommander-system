@@ -13,12 +13,6 @@
             <property name="hibernate.ogm.datastore.database" value="HotelRecommenderSystem" />
             <property name="hibernate.ogm.datastore.host" value="localhost" />
             <property name="hibernate.ogm.datastore.create_database" value="true" />
-
-            <!-- <property name="hibernate.ogm.mongodb.authentication_database" value="CodePhenomRemastered"/>
-            <property name="hibernate.ogm.datastore.username" value="aym" />
-            <property name="hibernate.ogm.datastore.password" value="root" />
-            -->
-            
             <property name="hibernate.ogm.mongodb.authentication_database" value="CodePhenomRemastered"/>
             <property name="hibernate.ogm.datastore.username" value="" />
             <property name="hibernate.ogm.datastore.password" value="" />
