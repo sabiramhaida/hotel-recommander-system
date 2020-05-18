@@ -45,6 +45,22 @@ public class Hotel_Dao {
         else return hotels.iterator().next();
     }
 
+    public List<Hotel> getHotelsByName(List<String> names) throws ClassNotFoundException {
+
+        entityManagerFactory = HibernateOGMUtil.setUpEntityManagerFactory();
+
+        entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+
+        String query = "FROM Hotel as h where h.name in :listOfNames";
+        List<Hotel> hotels = entityManager.createQuery( query , Hotel.class )
+                .setParameter("listOfNames",names)
+                .getResultList();
+        if(hotels.size() == 0) return null;
+        else return hotels;
+    }
+
     public List<Hotel> getHotels() throws ClassNotFoundException {
 
         entityManagerFactory = HibernateOGMUtil.setUpEntityManagerFactory();

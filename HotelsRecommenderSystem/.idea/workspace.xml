@@ -174,15 +174,11 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1279d24a-52c1-4547-a2da-2443e9a435a2" name="Default Changelist" comment="" />
-      <created>1589313653120</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1589313653120</updated>
       <workItem from="1589313656255" duration="68000" />
       <workItem from="1589320285681" duration="16145000" />
       <workItem from="1589342464245" duration="6221000" />
       <workItem from="1589381642653" duration="2710000" />
-      <workItem from="1589509349680" duration="8000" />
+      <workItem from="1589509349680" duration="8000"/>
       <workItem from="1589509380034" duration="7000" />
       <workItem from="1589518465381" duration="155000" />
       <workItem from="1589561207078" duration="778000" />
@@ -191,13 +187,10 @@
       <workItem from="1589669469053" duration="1286000" />
       <workItem from="1589691182490" duration="4645000" />
       <workItem from="1589706907230" duration="544000" />
-      <workItem from="1589734067406" duration="1083000" />
-      <workItem from="1589738077181" duration="2870000" />
     </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+  <component name="TypeScriptGeneratedFilesManager">    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="419" y="87" width="800" height="677" key="#Tomcat_Server" timestamp="1589734134256">
@@ -284,6 +277,7 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state width="1291" height="354" key="GridCell.Tab.2.right/0.27.1920.1000@0.27.1920.1000" timestamp="1589707451797" />
+<<<<<<< HEAD
     <state width="1176" height="2" key="GridCell.Tab.2.right/67.27.1299.741@67.27.1299.741" timestamp="1589753925584" />
     <state x="484" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1589738082518">
       <screen x="67" y="27" width="1299" height="741" />
@@ -291,7 +285,13 @@
     <state x="616" y="353" key="com.intellij.ide.util.TipDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1589706907894" />
     <state x="484" y="269" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1589738082518" />
     <state x="489" y="185" width="672" height="502" key="run.anything.popup" timestamp="1589738518855">
-      <screen x="67" y="27" width="1299" height="741" />
+      <screen x="67" y="27" width="1299" height="741"/
+    <state x="616" y="353" key="com.intellij.ide.util.TipDialog" timestamp="1589744385372">
+      <screen x="0" y="27" width="1920" height="1000" />
+    </state>
+    <state x="616" y="353" key="com.intellij.ide.util.TipDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1589744385372" />
+    <state x="624" y="240" width="672" height="677" key="run.anything.popup" timestamp="1589666964781">
+      <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="624" y="240" width="672" height="677" key="run.anything.popup/0.27.1920.1000@0.27.1920.1000" timestamp="1589666964781" />
     <state x="489" y="185" width="672" height="502" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1589738518855" />

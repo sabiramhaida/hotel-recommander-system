@@ -49,12 +49,12 @@ public class HotelPageRedirect extends javax.servlet.http.HttpServlet {
         InputStream stdout = process.getInputStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(stdout, StandardCharsets.UTF_8));
         String line;
-        String output = "";
+        List<String> hotelNames = new ArrayList<String>();
         try{
             while((line = reader.readLine()) != null){
-                output += line;
-                System.out.println(line);
+                hotelNames.add(line);
             }
+            request.setAttribute("recommended_hotels", hotelNames);
         }catch(IOException e){
             System.out.println("Exception in reading output python"+ e.toString());
         }
