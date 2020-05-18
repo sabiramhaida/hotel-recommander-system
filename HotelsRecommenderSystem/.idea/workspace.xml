@@ -8,11 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1279d24a-52c1-4547-a2da-2443e9a435a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/Hotel_Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/Hotel_Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainPackage/HotelPageRedirect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainPackage/HotelPageRedirect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hotelPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hotelPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/HotelsRecommenderSystem/WEB-INF/classes/MainPackage/HotelPageRedirect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/HotelsRecommenderSystem/WEB-INF/classes/MainPackage/HotelPageRedirect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainPackage/HotelPageRedirect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainPackage/HotelPageRedirect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadFromCsvToMongoDb.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/uploadFromCsvToMongoDb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +146,11 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />

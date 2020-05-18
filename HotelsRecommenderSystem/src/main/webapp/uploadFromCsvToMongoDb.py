@@ -41,8 +41,8 @@ for indexHotel in range(0, len(hotels0)):
 
 # Making a Connection with MongoClient
 #client = MongoClient("mongodb://aym:root@localhost:27017/?authSource=CodePhenomRemastered")
-client = MongoClient("mongodb://localhost:27017/?
-readPreference=primary&appname=MongoDB%20Compass&ssl=false")
+
+client = MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false")
 # database
 db = client["HotelRecommenderSystem"]
 hotel= db["Hotel"]

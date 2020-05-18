@@ -20,8 +20,8 @@
             -->
             
             <property name="hibernate.ogm.mongodb.authentication_database" value="CodePhenomRemastered"/>
-            <property name="hibernate.ogm.datastore.username" value="aym" />
-            <property name="hibernate.ogm.datastore.password" value="root" />
+            <property name="hibernate.ogm.datastore.username" value="" />
+            <property name="hibernate.ogm.datastore.password" value="" />
 
 
         </properties>
