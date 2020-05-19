@@ -32,7 +32,7 @@ public class HotelPageRedirect extends javax.servlet.http.HttpServlet {
         System.out.println("Python started");
         ObjectId hotelId = new ObjectId(request.getParameter("hotel_id").toString());
         Hotel hotel = new Hotel_Dao().getHotel(hotelId);
-        request.setAttribute("Hotel", hotel);
+        request.setAttribute("hotel", hotel);
         System.out.println("Hotel name : " + hotel.getName());
         String path = "/home/aym/Documents/gitHub/hotel-recommander-system/HotelsRecommenderSystem/src/main/webapp/hotel_data_cleaning_and_preprcessing.py";
         File file = new File(path);
@@ -54,7 +54,8 @@ public class HotelPageRedirect extends javax.servlet.http.HttpServlet {
             while((line = reader.readLine()) != null){
                 hotelNames.add(line);
             }
-            request.setAttribute("recommended_hotels", hotelNames);
+            List<Hotel> hotelsRecommendedList = new Hotel_Dao().getHotelsByName(hotelNames);
+            request.setAttribute("recommended_hotels", hotelsRecommendedList);
         }catch(IOException e){
             System.out.println("Exception in reading output python"+ e.toString());
         }

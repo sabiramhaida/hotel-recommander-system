@@ -18,6 +18,7 @@
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-impl:2.2.20" />
           <element id="library" level="project" name="Maven: org.primefaces:primefaces:8.0" />
           <element id="file-copy" path="$MAVEN_REPOSITORY$/javax/servlet/jstl/1.2/jstl-1.2.jar" output-file-name="javax.servlet-jstl-1.2.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2.jar" output-file-name="jstl-jstl-1.2.jar" />
           <element id="library" level="project" name="Maven: org.hibernate.ogm:hibernate-ogm-mongodb:5.4.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate.ogm:hibernate-ogm-core:5.4.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.3.6.Final" />
@@ -50,7 +51,6 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.5" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
-          <element id="file-copy" path="$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2.jar" output-file-name="jstl-jstl-1.2.jar" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
           <element id="library" level="project" name="Maven: org.apache.maven.plugins:maven-assembly-plugin:3.2.0" />
           <element id="library" level="project" name="Maven: org.apache.maven:maven-plugin-api:3.0" />

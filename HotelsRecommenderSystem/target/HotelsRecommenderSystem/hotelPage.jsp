@@ -1,12 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ page import="org.bson.types.ObjectId" %>
 <%@ page import="Dao.Hotel_Dao" %>
 <%@ page import="Model.Hotel" %>
 <%@ page import="java.util.List" %>
 <%@include file="UI_Components/navbar.jsp" %>
 <!-- Page top Section end -->
-<%
-    Hotel hotel = (Hotel) request.getAttribute("Hotel");
-%>
+
 <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
     <div class="page-top-warp">
         <form class="main-search-form">
@@ -57,71 +56,53 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="property-header">
-                                <h3><%=hotel.getName()%>
+                                <h3><c:out value = "${hotel.name}"/>
                                 </h3>
-                                <h5><%=hotel.getCountry()%>, <%=hotel.getRegion()%>
+                                <h5><c:out value = "${hotel.country}"/>, <c:out value = "${hotel.region}"/>
                                 </h5>
                             </div>
                         </div>
                         <div class="col-lg-4 text-left text-lg-right">
                             <div class="property-header">
-                                <h3><%=hotel.getPrice()%>
+                                <h3><c:out value = "${hotel.price}"/>
                                 </h3>
-                                <p>3 Bedrooms Townhouse</p>
                             </div>
                         </div>
                     </div>
-                    <div class="property-info-bar">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="pi-metas">
-                                    <div class="pi-meta">3 Bed</div>
-                                    <div class="pi-meta">2 Baths</div>
-                                    <div class="pi-meta">1 Garage</div>
-                                    <div class="pi-meta">2849 SF</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 text-left text-lg-right">
-                                <a href="#" class="offer-btn">Make an Offer</a>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="property-text">
                         <h4>Description</h4>
                         <div class="row justify-content-center">
                             <div class="col-lg-4">
                                 <h5 style="margin-bottom: 20px">Property amenties</h5>
                                 <ul class="list-group list-group-flush">
-                                    <%
-                                        for (String property_amenty : hotel.getProperty_amenties()) {
-                                    %>
-                                    <li class="list-group-item"><%=property_amenty%>
+                        <c:forEach items="${hotel.property_amenties}" var="property">
+                                    <li class="list-group-item"><c:out value = "${property}"/>
                                     </li>
-                                    <% }%>
+                        </c:forEach>
                                 </ul>
                             </div>
 
                             <div class="col-lg-4">
                                 <h5 style="margin-bottom: 20px">Room features</h5>
                                 <ul class="list-group list-group-flush">
-                                    <%
-                                        for (String room_feature : hotel.getRoom_features()) {
-                                    %>
-                                    <li class="list-group-item"><%=room_feature%>
+                            <c:forEach items="${hotel.room_features}" var="property">
+                                    <li class="list-group-item"><c:out value = "${property}"/>
                                     </li>
-                                    <% }%>
+                            </c:forEach>
+
                                 </ul>
                             </div>
 
                             <div class="col-lg-4">
                                 <h5 style="margin-bottom: 20px">Hotel style</h5>
                                 <ul class="list-group list-group-flush">
-                                    <%
-                                        for (String hotel_style : hotel.getHotel_style()) {
-                                    %>
-                                    <li class="list-group-item"><%=hotel_style%>
+                                <c:forEach items="${hotel.hotel_style}" var="property">
+
+                                    <li class="list-group-item"><c:out value = "${property}"/>
                                     </li>
-                                    <% }%>
+                                </c:forEach>
+
                                 </ul>
                             </div>
                         </div>
@@ -135,35 +116,35 @@
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                                     <div class="pf-box">
                                         <h6>Hotel score reviews</h6>
-                                        <p><%=hotel.getHotel_score_reviews()%>
+                                        <p><c:out value = "${hotel.hotel_score_reviews}"/>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                                     <div class="pf-box">
                                         <h6>Location score</h6>
-                                        <p><%=hotel.getLocation_score()%>
+                                        <p><c:out value = "${hotel.location_score}"/>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                                     <div class="pf-box">
                                         <h6>Cleanliness score</h6>
-                                        <p><%=hotel.getCleanliness_score()%>
+                                        <p><c:out value = "${hotel.cleanliness_score}"/>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                                     <div class="pf-box">
                                         <h6>Service score</h6>
-                                        <p><%=hotel.getService_score()%>
+                                        <p><c:out value = "${hotel.service_score}"/>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                                     <div class="pf-box">
                                         <h6>Value score</h6>
-                                        <p><%=hotel.getService_score()%>
+                                        <p><c:out value = "${hotel.value_score}"/>
                                         </p>
                                     </div>
                                 </div>
@@ -180,25 +161,21 @@
                             <h2>Similar hotels</h2>
                         </div>
                         <div class="row">
-                            <%
-                                List<String> hotelNames = (List<String> ) request.getAttribute("recommended_hotels");
-                                List<Hotel> hotelsRecommendedList = new Hotel_Dao().getHotelsByName(hotelNames);
-                                for (Hotel hotelRecommended : hotelsRecommendedList) {
-                            %>
+                      <c:forEach items="${recommended_hotels}" var="hotel">
                             <div class="col-lg-3">
                                 <div class="property-item">
                                     <div class="pi-image">
                                         <img src="img/property/1.jpg" alt="">
                                         <div class="pi-badge new">New</div>
                                     </div>
-                                    <h3>$<%=hotelRecommended.getPrice()%></h3>
-                                    <h5><%=hotelRecommended.getName()%></h5>
-                                    <p>Hotel class : <%=hotelRecommended.getHotel_class()%></p>
-                                    <h5><%=hotelRecommended.getCountry()%></h5>
+                                    <h3>$<c:out value = "${hotel.price}"/></h3>
+                                    <h5><c:out value = "${hotel.name}"/></h5>
+                                    <p>Hotel class : <c:out value = "${hotel.hotel_class}"/></p>
+                                    <h5><c:out value = "${hotel.country}"/></h5>
                                     <a href="#" class="readmore-btn">Find out more</a>
                                 </div>
                             </div>
-                            <% }%>
+                      </c:forEach>
                         </div>
 
                     </div>

@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>Mondy | Real Estate HTML Template</title>
+    <title>ANAM-AMHAIDA Advisor</title>
     <meta charset="UTF-8">
     <meta name="description" content="Real estate HTML Template">
     <meta name="keywords" content="real estate, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="shortcut icon"/>
+    <link href="img/logo.png" rel="shortcut icon"/>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900%7cRoboto:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
 <!-- Header Section -->
 <header class="header-section">
     <a href="index.html" class="site-logo">
-        <img src="img/logo.png" alt="">
+        <img src="img/logo.png" alt=""height="60px" width="60px">
     </a>
     <nav class="header-nav">
         <ul class="main-menu">

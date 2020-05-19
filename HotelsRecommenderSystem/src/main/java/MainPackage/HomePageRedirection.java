@@ -14,7 +14,14 @@ public class HomePageRedirection extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-
+        List<Hotel> hotels = null;
+        try {
+            hotels = new Hotel_Dao().getHotels();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("hotel size is : " + hotels.size());
+        request.setAttribute("hotels",hotels);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
