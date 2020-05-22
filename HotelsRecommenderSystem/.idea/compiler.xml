@@ -9,5 +9,8 @@
         <module name="HotelsRecommenderSystem" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HotelsRecommenderSystem" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

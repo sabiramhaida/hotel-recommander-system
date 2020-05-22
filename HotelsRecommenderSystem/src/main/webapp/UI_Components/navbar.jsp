@@ -1,4 +1,5 @@
-
+<%HttpSession session = request.getSession(false); %>
+<%@page session="false"%>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -39,7 +40,7 @@
 <!-- Header Section -->
 <header class="header-section">
     <a href="index.html" class="site-logo">
-        <img src="img/logo.png" alt="">
+        <img src="img/logo.png" alt="" width="40px" height="40px">
     </a>
     <nav class="header-nav">
         <ul class="main-menu">
@@ -50,8 +51,9 @@
         </ul>
         <div class="header-right">
             <div class="user-panel">
-                <%if (session.getAttribute("username")!=null){%>
+                <%if (session !=null){%>
                 <a href="./userArea" class="login"> <%=session.getAttribute("username")%> </a>
+                <a href="./signOut" class="register">Log out</a>
                 <%}else{%>
                 <a href="./signInPage" class="login">Sign in</a>
                 <a href="./signUpPage" class="register">Join us</a>

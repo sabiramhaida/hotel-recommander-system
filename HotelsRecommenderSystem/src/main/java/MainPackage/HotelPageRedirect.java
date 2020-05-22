@@ -29,7 +29,6 @@ public class HotelPageRedirect extends javax.servlet.http.HttpServlet {
 
     public void pythonCodeExecutor(javax.servlet.http.HttpServletRequest request) throws ClassNotFoundException, IOException, InterruptedException {
 
-        System.out.println("Python started");
         ObjectId hotelId = new ObjectId(request.getParameter("hotel_id").toString());
         Hotel hotel = new Hotel_Dao().getHotel(hotelId);
         request.setAttribute("hotel", hotel);

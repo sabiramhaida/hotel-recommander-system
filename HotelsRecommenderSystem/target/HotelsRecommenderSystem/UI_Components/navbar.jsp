@@ -1,15 +1,16 @@
-
+<%HttpSession session = request.getSession(false); %>
+<%@page session="false"%>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>ANAM-AMHAIDA Advisor</title>
+    <title>Mondy | Real Estate HTML Template</title>
     <meta charset="UTF-8">
     <meta name="description" content="Real estate HTML Template">
     <meta name="keywords" content="real estate, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link href="img/logo.png" rel="shortcut icon"/>
+    <link href="img/favicon.ico" rel="shortcut icon"/>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900%7cRoboto:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@
 <!-- Header Section -->
 <header class="header-section">
     <a href="index.html" class="site-logo">
-        <img src="img/logo.png" alt=""height="60px" width="60px">
+        <img src="img/logo.png" alt="" width="40px" height="40px">
     </a>
     <nav class="header-nav">
         <ul class="main-menu">
@@ -50,10 +51,16 @@
         </ul>
         <div class="header-right">
             <div class="user-panel">
-                <a href="#" class="login">Sign in</a>
-                <a href="#" class="register">Join us</a>
+                <%if (session !=null){%>
+                <a href="./userArea" class="login"> <%=session.getAttribute("username")%> </a>
+                <a href="./signOut" class="register">Log out</a>
+                <%}else{%>
+                <a href="./signInPage" class="login">Sign in</a>
+                <a href="./signUpPage" class="register">Join us</a>
+                <%}%>
             </div>
         </div>
     </nav>
 </header>
 <!-- Header Section end -->
+
