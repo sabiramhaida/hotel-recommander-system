@@ -133,7 +133,6 @@ hotel_styl_df.shape
 hotels = pd.concat([hotels, hotel_styl_df], axis=1)
 
 """# Working on Data"""
-
 # Useless cell for now until we want to work on qualitative features
 def get_qual_matrix(dataframe):
     cv = CountVectorizer()
@@ -162,6 +161,15 @@ def clean_dataset(df):
     return df[indices_to_keep].astype(np.float64)
 
 
+country = sys.argv[2]
+
+
+
+hotels = hotels[hotels['Country'] == country]
+hotels = hotels.drop_duplicates(subset="name")
+
+
+
 hotels_newdf = hotels.iloc[:,8:]
 hotels_newdf
 
@@ -171,8 +179,6 @@ hotel_names[['name']] = pd.DataFrame(hotels.name)
 hotel_names.shape
 
 
-
-hotels_newdf.head()
 
 
 clean_dataset(hotels_newdf)
@@ -188,7 +194,7 @@ def fuzzy_matcher(mapper, inputHotel):
     match_tuple = []
     for name, idx in mapper.items():
         ratio = fuzz.ratio(name.lower(), inputHotel.lower())
-        if ratio >= 60:
+        if ratio >= 20:
             match_tuple.append((name, idx, ratio))
     # sort
     match_tuple = sorted(match_tuple, key=lambda x: x[2])[::-1]
@@ -197,13 +203,19 @@ def fuzzy_matcher(mapper, inputHotel):
     return match_tuple[0][1]
 
 def content_based_recomm(similarity_table, mapper, numberOfRecommandations, inputHotel):
+
       idx = fuzzy_matcher(mapper, inputHotel)
       similair_hotels_scores = similarity_scores[idx]
-      indices = [i for i in range(len(similair_hotels_scores))]
-      similair_hotels = sorted(zip(indices, similair_hotels_scores), key=lambda x: x[1])[:0:-1][1:numberOfRecommandations + 1]
+
+      indices = [i for i in range(len(similair_hotels_scores.tolist()))]
+
+      similair_hotels = sorted(zip(indices, similair_hotels_scores.tolist()), key=lambda x: x[1])[:0:-1][:numberOfRecommandations]
+
+      reverse_mapper = {v: k for k, v in mapper.items()}
+
       i=0
       for idx,score in similair_hotels :
-          print(hotel_names[hotel_names.index.get_level_values(0)==idx].values.tolist()[0][0])
+          print(reverse_mapper[idx])
           i+=1
 
 mapper = {
@@ -216,6 +228,5 @@ if __name__== "__main__":
                          mapper=mapper,
                          inputHotel=sys.argv[1],
                          numberOfRecommandations=7)
-
 
 

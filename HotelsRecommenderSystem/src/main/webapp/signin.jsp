@@ -11,7 +11,7 @@
 
 <body>
 
-<div class="main">
+<div class="main" style="margin-top: 250px">
 <p class="sign" align="center">Sign in</p>
 <form class="form1" action="./signInPage" method="post">
 <input class="un " type="text" align="center" placeholder="Username" name = "username">

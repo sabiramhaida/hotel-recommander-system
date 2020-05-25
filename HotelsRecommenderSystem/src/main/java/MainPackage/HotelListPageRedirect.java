@@ -21,7 +21,7 @@ public class HotelListPageRedirect extends javax.servlet.http.HttpServlet {
 
         String filter = request.getParameter("filter");
         HttpSession session = request.getSession(false);
-        if (session != null) {
+        if (session != null ) {
             String username = session.getAttribute("username").toString();
             if (filter.equals("all")) {
                 try {
