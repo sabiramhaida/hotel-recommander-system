@@ -15,7 +15,7 @@ public class UserActivity {
     ObjectId _id;
 
     private String hotel_name;
-    private int date;
+    private long date;
     private String username;
     private String activity;
 
@@ -36,11 +36,11 @@ public class UserActivity {
     }
 
 
-    public int getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
